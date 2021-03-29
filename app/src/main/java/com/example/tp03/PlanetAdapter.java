@@ -18,7 +18,7 @@ import java.util.ArrayList;
 
 public class PlanetAdapter extends BaseAdapter {
     private final MainActivity mainActivityContext;
-    private ArrayList<String> planetes;
+    private ArrayList<Planet> planetes;
     private Data data;
     public static int nb=0;
 
@@ -73,7 +73,7 @@ public class PlanetAdapter extends BaseAdapter {
         final Spinner spinner = (Spinner) itemView.findViewById(R.id.spinner);
 
         //change le texte de l’élément de la liste en le récupérant de la liste des planètes par la position de l’élément
-        nomPlanete.setText(planetes.get(position));
+        nomPlanete.setText(planetes.get(position).getNom());
 
         //  installer l'adaptateur pour la liste déroulante (spinner)
         final ArrayAdapter<String> spinadapter = new ArrayAdapter<String>(mainActivityContext, android.R.layout.simple_spinner_item, data.getTaillePlanetes());
